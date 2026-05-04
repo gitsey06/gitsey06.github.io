@@ -161,10 +161,13 @@ form button:hover {
 <body>
   <div class="container">
 <h2>Message Me</h2>
-<form action="https://formspree.io/f/mlgzjjyw" method="POST">
-  <input type="text" name="name" placeholder="Your name" required>
-  <input type="email" name="email" placeholder="Your email" required>
-  <textarea name="message" placeholder="Your message" required></textarea>
+<form action="https://api.web3forms.com/submit" method="POST">
+  <input type="hidden" name="access_key" value="f4c2d344-3c1e-4090-8e19-5e12b5cc8cb0">
+  <input type="text" name="name" required>
+  <input type="email" name="email" required>
+  <textarea name="message" required></textarea>
+  <button type="submit">Submit</button>
+</form>
   <button type="submit">Send Message</button>
 </form>
     <button onclick="alert('Thanks for visiting my site!')">Say Hi</button>
