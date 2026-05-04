@@ -169,7 +169,42 @@ form button:hover {
   <button type="submit">Submit</button>
 </form>
   <button type="submit">Send Message</button>
-</form>
+<style 
+input, textarea {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #333333;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+input::placeholder, textarea::placeholder {
+  color: #999999;
+}
+
+input:focus, textarea:focus {
+  border-color: #4CAF50;
+  outline: none;
+  background: #ffffff;
+}
+
+/* Dark mode fix */
+body.dark-mode input, 
+body.dark-mode textarea {
+  background: #2d3748;
+  color: #ffffff;
+  border-color: #4a5568;
+}
+
+body.dark-mode input::placeholder,
+body.dark-mode textarea::placeholder {
+  color: #a0aec0;
+}
+
     <button onclick="alert('Thanks for visiting my site!')">Say Hi</button>
   </div>
 </body>
