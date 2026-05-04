@@ -184,11 +184,12 @@
     body.dark-mode textarea::placeholder {
       color: #a0aec0;
     }
-    #calc {
+   #calc {
   background: #2d3748;
   padding: 15px;
   border-radius: 10px;
   margin: 15px 0;
+  max-width: 100%;
 }
 
 #display {
@@ -202,22 +203,25 @@
   border-radius: 5px;
   background: #1a202c;
   color: #fff;
+  box-sizing: border-box;
 }
 
 .calc-buttons {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 8px;
+  width: 100%;
 }
 
 .calc-buttons button {
-  padding: 20px;
+  padding: 15px 5px;
   font-size: 18px;
   border: none;
   border-radius: 5px;
   background: #4a5568;
   color: white;
   cursor: pointer;
+  min-width: 0;
 }
 
 .calc-buttons button:hover {
@@ -231,6 +235,15 @@
 
 .zero {
   grid-column: span 2;
+}
+
+/* Mobile fix */
+@media (max-width: 400px) {
+  .calc-buttons button {
+    padding: 12px 2px;
+    font-size: 16px;
+  }
+}
 }
   </style>
 </head>
