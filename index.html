@@ -300,7 +300,7 @@
   </div>
   <a href="https://github.com/gitsey06/gitsey06.github.io" target="_blank">View Code</a>
 </div>
-          <p>JavaScript calculator with clean UI. Building this next.</p>
+          <p Fully functional calculator built with vanilla JavaScript.</p>
           <a href="#" target="_blank">View Code</a>
         </div>
         
@@ -336,50 +336,49 @@
   </div>
 
   <script>
-    // Dark mode toggle function
-    function toggleDarkMode() {
-      document.body.classList.toggle('dark-mode');
-      
-      if (document.body.classList.contains('dark-mode')) {
-        localStorage.setItem('theme', 'dark');
-      } else {
-        localStorage.setItem('theme', 'light');
-      }
+  </div> <!-- closes .container -->
+
+<script>
+  // Dark mode
+  function toggleDarkMode() {
+    document.body.classList.toggle('dark-mode');
+    if (document.body.classList.contains('dark-mode')) {
+      localStorage.setItem('theme', 'dark');
+    } else {
+      localStorage.setItem('theme', 'light');
     }
-    
-    // Load saved theme
-    document.addEventListener('DOMContentLoaded', function() {
-      if (localStorage.getItem('theme') === 'dark') {
-        document.body.classList.add('dark-mode');
-      }
-      
-      // Visit counter
-      let visits = localStorage.getItem('visits') || 0;
-      visits++;
-      localStorage.setItem('visits', visits);
-      document.getElementById('count').textContent = visits;
-    });
-  </script>
-  let display = document.getElementById('display');
-
-function appendToDisplay(value) {
-  display.value += value;
-}
-
-function clearDisplay() {
-  display.value = '';
-}
-
-function deleteLast() {
-  display.value = display.value.slice(0, -1);
-}
-
-function calculate() {
-  try {
-    display.value = eval(display.value);
-  } catch {
-    display.value = 'Error';
   }
-}
+  
+  document.addEventListener('DOMContentLoaded', function() {
+    if (localStorage.getItem('theme') === 'dark') {
+      document.body.classList.add('dark-mode');
+    }
+  });
+
+  // Calculator
+  function appendToDisplay(value) {
+    document.getElementById('display').value += value;
+  }
+  
+  function clearDisplay() {
+    document.getElementById('display').value = '';
+  }
+  
+  function deleteLast() {
+    let display = document.getElementById('display');
+    display.value = display.value.slice(0, -1);
+  }
+  
+  function calculate() {
+    let display = document.getElementById('display');
+    try {
+      display.value = eval(display.value);
+    } catch {
+      display.value = 'Error';
+    }
+  }
+</script>
+</body>
+</html>
 </body>
 </html>
