@@ -5,7 +5,6 @@
   <link rel="icon" href="https://www.google.com/s2/favicons?domain=github.com">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    /* BASE STYLES */
     body {
       background: #6b7fd7;
       font-family: Arial, sans-serif;
@@ -49,7 +48,6 @@
       cursor: pointer;
     }
     
-    /* PROJECTS */
     #projects {
       padding: 40px 20px;
       text-align: center;
@@ -91,7 +89,6 @@
       border-radius: 6px;
     }
     
-    /* SOCIAL LINKS */
     .social-links {
       display: flex;
       gap: 15px;
@@ -115,7 +112,6 @@
       transform: translateY(-2px);
     }
     
-    /* FORM */
     input, textarea {
       display: block;
       width: 80%;
@@ -153,7 +149,6 @@
       background: #27ae60;
     }
     
-    /* DARK MODE */
     body.dark-mode {
       background: #1a202c;
       color: #e2e8f0;
@@ -184,67 +179,66 @@
     body.dark-mode textarea::placeholder {
       color: #a0aec0;
     }
-   #calc {
-  background: #2d3748;
-  padding: 15px;
-  border-radius: 10px;
-  margin: 15px 0;
-  max-width: 100%;
-}
-
-#display {
-  width: 100%;
-  height: 50px;
-  margin-bottom: 10px;
-  font-size: 24px;
-  text-align: right;
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-  background: #1a202c;
-  color: #fff;
-  box-sizing: border-box;
-}
-
-.calc-buttons {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 8px;
-  width: 100%;
-}
-
-.calc-buttons button {
-  padding: 15px 5px;
-  font-size: 18px;
-  border: none;
-  border-radius: 5px;
-  background: #4a5568;
-  color: white;
-  cursor: pointer;
-  min-width: 0;
-}
-
-.calc-buttons button:hover {
-  background: #718096;
-}
-
-.equals {
-  grid-row: span 2;
-  background: #48bb78 !important;
-}
-
-.zero {
-  grid-column: span 2;
-}
-
-/* Mobile fix */
-@media (max-width: 400px) {
-  .calc-buttons button {
-    padding: 12px 2px;
-    font-size: 16px;
-  }
-}
-}
+    
+    #calc {
+      background: #2d3748;
+      padding: 15px;
+      border-radius: 10px;
+      margin: 15px 0;
+      max-width: 100%;
+    }
+    
+    #display {
+      width: 100%;
+      height: 50px;
+      margin-bottom: 10px;
+      font-size: 24px;
+      text-align: right;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      background: #1a202c;
+      color: #fff;
+      box-sizing: border-box;
+    }
+    
+    .calc-buttons {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+      width: 100%;
+    }
+    
+    .calc-buttons button {
+      padding: 15px 5px;
+      font-size: 18px;
+      border: none;
+      border-radius: 5px;
+      background: #4a5568;
+      color: white;
+      cursor: pointer;
+      min-width: 0;
+    }
+    
+    .calc-buttons button:hover {
+      background: #718096;
+    }
+    
+    .equals {
+      grid-row: span 2;
+      background: #48bb78 !important;
+    }
+    
+    .zero {
+      grid-column: span 2;
+    }
+    
+    @media (max-width: 400px) {
+      .calc-buttons button {
+        padding: 12px 2px;
+        font-size: 16px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -268,40 +262,36 @@
         </div>
         
         <div class="project-card">
-          <h3>Coming Soon</h3>
-          <div class="project-card">
-  <h3>JS Calculator</h3>
-  <div id="calc">
-    <input type="text" id="display" readonly>
-    <div class="calc-buttons">
-      <button onclick="clearDisplay()">C</button>
-      <button onclick="appendToDisplay('/')">/</button>
-      <button onclick="appendToDisplay('*')">*</button>
-      <button onclick="deleteLast()">⌫</button>
-      
-      <button onclick="appendToDisplay('7')">7</button>
-      <button onclick="appendToDisplay('8')">8</button>
-      <button onclick="appendToDisplay('9')">9</button>
-      <button onclick="appendToDisplay('-')">-</button>
-      
-      <button onclick="appendToDisplay('4')">4</button>
-      <button onclick="appendToDisplay('5')">5</button>
-      <button onclick="appendToDisplay('6')">6</button>
-      <button onclick="appendToDisplay('+')">+</button>
-      
-      <button onclick="appendToDisplay('1')">1</button>
-      <button onclick="appendToDisplay('2')">2</button>
-      <button onclick="appendToDisplay('3')">3</button>
-      <button onclick="calculate()" class="equals">=</button>
-      
-      <button onclick="appendToDisplay('0')" class="zero">0</button>
-      <button onclick="appendToDisplay('.')">.</button>
-    </div>
-  </div>
-  <a href="https://github.com/gitsey06/gitsey06.github.io" target="_blank">View Code</a>
-</div>
-          <p Fully functional calculator built with vanilla JavaScript.</p>
-          <a href="#" target="_blank">View Code</a>
+          <h3>JS Calculator</h3>
+          <div id="calc">
+            <input type="text" id="display" readonly>
+            <div class="calc-buttons">
+              <button onclick="clearDisplay()">C</button>
+              <button onclick="appendToDisplay('/')">/</button>
+              <button onclick="appendToDisplay('*')">*</button>
+              <button onclick="deleteLast()">⌫</button>
+              
+              <button onclick="appendToDisplay('7')">7</button>
+              <button onclick="appendToDisplay('8')">8</button>
+              <button onclick="appendToDisplay('9')">9</button>
+              <button onclick="appendToDisplay('-')">-</button>
+              
+              <button onclick="appendToDisplay('4')">4</button>
+              <button onclick="appendToDisplay('5')">5</button>
+              <button onclick="appendToDisplay('6')">6</button>
+              <button onclick="appendToDisplay('+')">+</button>
+              
+              <button onclick="appendToDisplay('1')">1</button>
+              <button onclick="appendToDisplay('2')">2</button>
+              <button onclick="appendToDisplay('3')">3</button>
+              <button onclick="calculate()" class="equals">=</button>
+              
+              <button onclick="appendToDisplay('0')" class="zero">0</button>
+              <button onclick="appendToDisplay('.')">.</button>
+            </div>
+          </div>
+          <p>Fully functional calculator built with vanilla JavaScript.</p>
+          <a href="https://github.com/gitsey06/gitsey06.github.io" target="_blank">View Code</a>
         </div>
         
         <div class="project-card">
@@ -335,11 +325,7 @@
     </form>
   </div>
 
-  <script>
-  </div> <!-- closes .container -->
-
 <script>
-  // Dark mode
   function toggleDarkMode() {
     document.body.classList.toggle('dark-mode');
     if (document.body.classList.contains('dark-mode')) {
@@ -353,9 +339,13 @@
     if (localStorage.getItem('theme') === 'dark') {
       document.body.classList.add('dark-mode');
     }
+    
+    let visits = localStorage.getItem('visits') || 0;
+    visits++;
+    localStorage.setItem('visits', visits);
+    document.getElementById('count').textContent = visits;
   });
 
-  // Calculator
   function appendToDisplay(value) {
     document.getElementById('display').value += value;
   }
@@ -366,19 +356,4 @@
   
   function deleteLast() {
     let display = document.getElementById('display');
-    display.value = display.value.slice(0, -1);
-  }
-  
-  function calculate() {
-    let display = document.getElementById('display');
-    try {
-      display.value = eval(display.value);
-    } catch {
-      display.value = 'Error';
-    }
-  }
-</script>
-</body>
-</html>
-</body>
-</html>
+    display.value = display.value.slice
