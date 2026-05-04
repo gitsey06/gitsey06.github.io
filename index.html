@@ -83,11 +83,18 @@
     .project-card a {
       display: inline-block;
       margin-top: 15px;
-      padding: 8px 16px;
-      background: #4CAF50;
+      padding: 12px 24px;
+      background: #ff6b6b;
       color: white;
       text-decoration: none;
-      border-radius: 6px;
+      border-radius: 25px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .project-card a:hover {
+      background: #ff5252;
+      transform: translateY(-2px);
     }
     
     .social-links {
@@ -249,39 +256,39 @@
       }
     }
     #weather {
-  margin: 15px 0;
-}
+      margin: 15px 0;
+    }
 
-#city-input {
-  width: 100%;
-  padding: 12px;
-  margin-bottom: 10px;
-  border: 2px solid #ddd;
-  border-radius: 8px;
-  font-size: 16px;
-  box-sizing: border-box;
-}
+    #city-input {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 10px;
+      border: 2px solid #ddd;
+      border-radius: 8px;
+      font-size: 16px;
+      box-sizing: border-box;
+    }
 
-#weather button {
-  width: 100%;
-  background: #4299e1;
-  padding: 12px;
-  border-radius: 8px;
-  margin: 0 0 15px 0;
-}
+    #weather button {
+      width: 100%;
+      background: #4299e1;
+      padding: 12px;
+      border-radius: 8px;
+      margin: 0 0 15px 0;
+    }
 
-#weather-result {
-  background: #2d3748;
-  padding: 15px;
-  border-radius: 8px;
-  margin-top: 10px;
-  min-height: 50px;
-  color: white;
-}
+    #weather-result {
+      background: #2d3748;
+      padding: 15px;
+      border-radius: 8px;
+      margin-top: 10px;
+      min-height: 50px;
+      color: white;
+    }
 
-body.dark-mode #weather-result {
-  background: #1a202c;
-}
+    body.dark-mode #weather-result {
+      background: #1a202c;
+    }
   </style>
 </head>
 <body>
@@ -334,19 +341,20 @@ body.dark-mode #weather-result {
             </div>
           </div>
           <p>Fully functional calculator built with vanilla JavaScript.</p>
-          <a href="https://github.com/gitsey06/gitsey06.github.io" target="_blank">View Code</a>
+          <a href="https://wa.me/265993262353?text=Hi%20Grateful,%20I%20saw%20your%20calculator%20project.%20Can%20you%20build%20my%20website?" target="_blank">Hire Me For This</a>
         </div>
         
         <div class="project-card">
-  <h3>Live Weather App</h3>
-  <div id="weather">
-    <input type="text" id="city-input" placeholder="Enter city name" />
-    <button onclick="getWeather()">Get Weather</button>
-    <div id="weather-result"></div>
-  </div>
-  <p>Real-time weather data using OpenWeather API + vanilla JS</p>
-  <a href="https://github.com/gitsey06/gitsey06.github.io" target="_blank">View Code</a>
-</div>
+          <h3>Live Weather App</h3>
+          <div id="weather">
+            <input type="text" id="city-input" placeholder="Enter city name" />
+            <button onclick="getWeather()">Get Weather</button>
+            <div id="weather-result"></div>
+          </div>
+          <p>Real-time weather data using OpenWeather API + vanilla JS</p>
+          <a href="https://wa.me/265993262353?text=Hi%20Grateful,%20I%20saw%20your%20weather%20app.%20I%20need%20a%20website%20for%20my%20business" target="_blank">Hire Me For This</a>
+        </div>
+      </div>
     </section>
     
     <h2>My Links</h2>
@@ -370,12 +378,12 @@ body.dark-mode #weather-result {
     
     <button onclick="alert('Thanks for visiting my site!')">Say Hi</button>
     <button onclick="toggleDarkMode()">Toggle Dark Mode</button>
-    <p>You've visited <spanyvy v6 vg id="count">0</span> times</p>
+    <p>You've visited <span id="count">0</span> times</p>
     
     <h2>Message Me</h2>
     <form action="https://api.web3forms.com/submit" method="POST">
       <input type="hidden" name="access_key" value="f4c2d344-3c1e-4090-8e19-5e12b5cc8cb0">
-      <input type="text" name="_gotcha" style="display:none">
+      <input type="text" name="_gotcha" style="display:none !important">
       <input type="text" name="name" placeholder="Your name" required>
       <input type="email" name="email" placeholder="Your email" required>
       <textarea name="message" placeholder="Your message" required></textarea>
@@ -403,35 +411,36 @@ body.dark-mode #weather-result {
     localStorage.setItem('visits', visits);
     document.getElementById('count').textContent = visits;
   });
+  
   async function getWeather() {
-  const city = document.getElementById('city-input').value;
-  const result = document.getElementById('weather-result');
-  
-  if (!city) {
-    result.innerHTML = 'Please enter a city name';
-    return;
-  }
-  
-  result.innerHTML = 'Loading...';
-  
-  try {
-    const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=4f3d80e81fd4ceb3ac766e55b4acceff&units=metric`);
-    const data = await response.json();
+    const city = document.getElementById('city-input').value;
+    const result = document.getElementById('weather-result');
     
-    if (data.cod === 200) {
-      result.innerHTML = `
-        <h4>${data.name}, ${data.sys.country}</h4>
-        <p style="font-size: 32px; margin: 10px 0;">${Math.round(data.main.temp)}°C</p>
-        <p>${data.weather[0].description}</p>
-        <img src="https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" alt="weather icon">
-      `;
-    } else {
-      result.innerHTML = 'City not found. Try "Lilongwe" or "London"';
+    if (!city) {
+      result.innerHTML = 'Please enter a city name';
+      return;
     }
-  } catch (error) {
-    result.innerHTML = 'Error fetching weather. Check your API key.';
+    
+    result.innerHTML = 'Loading...';
+    
+    try {
+      const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=4f3d80e81fd4ceb3ac766e55b4acceff&units=metric`);
+      const data = await response.json();
+      
+      if (data.cod === 200) {
+        result.innerHTML = `
+          <h4>${data.name}, ${data.sys.country}</h4>
+          <p style="font-size: 32px; margin: 10px 0;">${Math.round(data.main.temp)}°C</p>
+          <p>${data.weather[0].description}</p>
+          <img src="https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" alt="weather icon">
+        `;
+      } else {
+        result.innerHTML = 'City not found. Try "Lilongwe" or "London"';
+      }
+    } catch (error) {
+      result.innerHTML = 'Error fetching weather. Check your API key.';
+    }
   }
-}
 </script>
 </body>
-  </html>
+</html>
