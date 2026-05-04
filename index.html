@@ -248,6 +248,40 @@
         font-size: 16px;
       }
     }
+    #weather {
+  margin: 15px 0;
+}
+
+#city-input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 10px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+#weather button {
+  width: 100%;
+  background: #4299e1;
+  padding: 12px;
+  border-radius: 8px;
+  margin: 0 0 15px 0;
+}
+
+#weather-result {
+  background: #2d3748;
+  padding: 15px;
+  border-radius: 8px;
+  margin-top: 10px;
+  min-height: 50px;
+  color: white;
+}
+
+body.dark-mode #weather-result {
+  background: #1a202c;
+}
   </style>
 </head>
 <body>
@@ -304,11 +338,15 @@
         </div>
         
         <div class="project-card">
-          <h3>Coming Soon</h3>
-          <p>Weather app using API data. Building this next.</p>
-          <a href="#" target="_blank">View Code</a>
-        </div>
-      </div>
+  <h3>Live Weather App</h3>
+  <div id="weather">
+    <input type="text" id="city-input" placeholder="Enter city name" />
+    <button onclick="getWeather()">Get Weather</button>
+    <div id="weather-result"></div>
+  </div>
+  <p>Real-time weather data using OpenWeather API + vanilla JS</p>
+  <a href="https://github.com/gitsey06/gitsey06.github.io" target="_blank">View Code</a>
+</div>
     </section>
     
     <h2>My Links</h2>
@@ -365,6 +403,35 @@
     localStorage.setItem('visits', visits);
     document.getElementById('count').textContent = visits;
   });
+  async function getWeather() {
+  const city = document.getElementById('city-input').value;
+  const result = document.getElementById('weather-result');
+  
+  if (!city) {
+    result.innerHTML = 'Please enter a city name';
+    return;
+  }
+  
+  result.innerHTML = 'Loading...';
+  
+  try {
+    const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=4f3d80e81fd4ceb3ac766e55b4acceff&units=metric`);
+    const data = await response.json();
+    
+    if (data.cod === 200) {
+      result.innerHTML = `
+        <h4>${data.name}, ${data.sys.country}</h4>
+        <p style="font-size: 32px; margin: 10px 0;">${Math.round(data.main.temp)}°C</p>
+        <p>${data.weather[0].description}</p>
+        <img src="https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" alt="weather icon">
+      `;
+    } else {
+      result.innerHTML = 'City not found. Try "Lilongwe" or "London"';
+    }
+  } catch (error) {
+    result.innerHTML = 'Error fetching weather. Check your API key.';
+  }
+}
 </script>
 </body>
 </html>
